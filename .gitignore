@@ -1,0 +1,8 @@
+*
+!*/
+!.gitignore
+!*.cc
+!*.hh
+!*.py
+!Makefile
+!LICENSE
