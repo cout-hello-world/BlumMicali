@@ -1,7 +1,8 @@
 CXXFLAGS = -std=c++14 -Wall -Wextra -Wpedantic -O3
 LDLIBS = -lgmp
+EXE = rng
 
-rng: blum_micali.o main.o
+$(EXE): blum_micali.o main.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
 main.o: main.cc blum_micali.hh
@@ -12,3 +13,6 @@ blum_micali.o: blum_micali.cc pi.inc blum_micali.hh
 
 pi.inc: make_pi.py
 	python3 $<
+
+clean:
+	$(RM) *.o pi.inc $(EXE)
