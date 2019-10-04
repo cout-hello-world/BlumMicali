@@ -13,7 +13,7 @@ BlumMicaliGenerator::BlumMicaliGenerator(const SeedType &seed)
     }
 
     mpz_init(x);
-    mpz_import(x, seed.size(), -1, sizeof(seed[0]), 0, 0, seed.data());
+    mpz_import(x, xored.size(), -1, sizeof(xored[0]), 0, 0, xored.data());
     mpz_init(p);
     mpz_ui_pow_ui(p, 2, 2281);
     mpz_mod(x, x, p);
